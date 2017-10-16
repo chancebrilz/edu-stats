@@ -1,8 +1,8 @@
 {
-  "name": "uni-stats-ember",
+  "name": "uni-stats",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for uni-stats-ember goes here",
+  "description": "Small description for uni-stats goes here",
   "license": "MIT",
   "author": "",
   "directories": {

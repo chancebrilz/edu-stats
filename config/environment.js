@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'uni-stats-ember',
+    modulePrefix: 'uni-stats',
     environment,
     rootURL: '/',
     locationType: 'auto',
