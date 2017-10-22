@@ -1,7 +1,7 @@
 # uni-stats
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## Build Information
+[![Build Status](https://travis-ci.org/chancebrilz/uni-stats.svg?branch=master)](https://travis-ci.org/chancebrilz/uni-stats)
 
 ## Prerequisites
 
