@@ -1,3 +1,0 @@
-
-GET LIST OF SCHOOLS:
-https://api.data.gov/ed/collegescorecard/v1/schools.json?_fields=id,school.name&api_key=ytLn79dasngd6VCCnqaQZpRT7VaiT6yDDOlSN2xz
