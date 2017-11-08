@@ -1,1 +1,36 @@
-@import "ember-cli-bootstrap-4/bootstrap";
+/* --- BOOTSTRAP CUSTOM VARIABLES --- */
+@import "_variables";
+
+/* --- BOOTSTRAP CORE (ALL) --- */
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/* --- CUSTOM STYLES --- */
+@import "header";
+@import "nav";
+
+
+html {
+  font-size: 12px;
+}
+
+.full-size {
+    min-height: calc(100vh - 50px);
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 16px;
+  }
+}

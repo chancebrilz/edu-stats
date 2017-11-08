@@ -1,5 +1,24 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="navbar navbar-dark bg-primary">
+    <div class="container d-flex justify-content-between">
+        {{#link-to 'index' class="navbar-brand"}}
+            <img id="logo-img" src="/assets/images/logo.png" alt="UniStats">
+        {{/link-to}}
+        <ul class="nav">
+            <li class="nav-item">
+                {{#link-to 'index' class="nav-link"}}About{{/link-to}}
+            </li>
+            <li class="nav-item">
+                {{#link-to 'app' class="nav-link"}}App{{/link-to}}
+            </li>
+        </ul>
+    </div>
+</div>
 
 {{outlet}}
+
+<footer class="text-muted">
+  <div class="container">
+    <p>{{moment (now)}} © Bootstrap, but please download and customize it for yourself!</p>
+    <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+  </div>
+</footer>
