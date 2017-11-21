@@ -1,5 +1,13 @@
 <div class="container full-size">
+    <div class="content my-5">
 
-    
+        {{#search-schools filter=(action 'filterByName') as |schools|}}
+          <ul class="results">
+            {{#each schools as |school|}}
+              <li>{{school.attrs.school.name}}</li>
+            {{/each}}
+          </ul>
+        {{/search-schools}}
 
+    </div>
 </div>

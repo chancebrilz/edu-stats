@@ -1,0 +1,9 @@
+
+<div id="search-box" class="mb-3">
+    {{input value=value
+            class="form-control form-control-lg"
+            key-up=(action 'handleSearch')
+            placeholder="Search school by name..."}}
+</div>
+
+{{yield results}}
