@@ -13,7 +13,7 @@ export default DS.JSONSerializer.extend({
             newPayload.data.push({
                 id: payload.results[i].id,
                 type: 'school',
-                attrs: payload.results[i]
+                attrs: this._deepen(payload.results[i])
             });
             delete(newPayload.data[i].attrs.id);
         }
@@ -23,5 +23,21 @@ export default DS.JSONSerializer.extend({
         return newPayload;
 
     },
+
+    _deepen(o) {
+      var oo = {},
+        t, parts, part;
+      for (var k in o) {
+        t = oo;
+        parts = k.split('.');
+        var key = parts.pop();
+        while (parts.length) {
+          part = parts.shift();
+          t = t[part] = t[part] || {};
+        }
+        t[key] = o[k]
+      }
+      return oo;
+    }
 
 });
