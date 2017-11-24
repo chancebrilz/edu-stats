@@ -1,0 +1,35 @@
+<div class="container full-size">
+    <div class="content mt-3">
+
+        {{#link-to 'app'}}
+            <div id="back-to-search" class="my-4 mx-1">
+                <i class="material-icons align-middle">keyboard_arrow_left</i>
+                <span class="align-middle">Back to Search</span>
+            </div>
+        {{/link-to}}
+
+        <div class="school-info content">
+            <div class="row border-bottom mb-2 mx-2">
+                <h2>{{model.attrs.school.name}}</h2>
+            </div>
+            <div class="row border-bottom mb-3 mx-2">
+                <div class="col school-info">
+                    <div class="mb-2 text-muted">Location</div>
+                    <h5>{{model.attrs.school.zip}}</h5>
+                </div>
+                <div class="col school-info">
+                    <div class="mb-2 text-muted">School Type</div>
+                    <h5>{{school-ownership model.attrs.school.ownership}}</h5>
+                </div>
+                <div class="col school-info">
+                    <div class="mb-2 text-muted">Degrees Awarded</div>
+                    <h5>{{degree-type model.attrs.school.degrees_awarded.predominant}}</h5>
+                </div>
+            </div>
+            <div class="my-4">
+                {{school-graphs school=model}}
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -7,6 +7,7 @@
 /* --- CUSTOM STYLES --- */
 @import "header";
 @import "nav";
+@import "footer";
 
 
 html {
@@ -17,9 +18,35 @@ html {
     min-height: calc(100vh - 50px);
 }
 
+.border-bottom {
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.google-chart {
+  width: 100%;
+  min-height: 300px;
+}
+
+@include media-breakpoint-down(sm) {
+    html {
+      font-size: 12px;
+    }
+    #container {
+        padding-top: 54px;
+    }
+}
+
 @include media-breakpoint-up(sm) {
   html {
     font-size: 12px;
+  }
+  #container {
+      padding-top: 54px;
   }
 }
 
@@ -27,10 +54,16 @@ html {
   html {
     font-size: 14px;
   }
+  #container {
+      padding-top: 60px;
+  }
 }
 
 @include media-breakpoint-up(lg) {
   html {
     font-size: 16px;
+  }
+  #container {
+      padding-top: 64px;
   }
 }

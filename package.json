@@ -44,6 +44,7 @@
     "ember-data": "~2.16.2",
     "ember-electron": "^2.7.2",
     "ember-export-application-global": "^2.0.0",
+    "ember-google-charts": "^1.5.3",
     "ember-load-initializers": "^1.0.0",
     "ember-moment": "^7.5.0",
     "ember-resolver": "^4.0.0",

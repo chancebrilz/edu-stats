@@ -2,24 +2,19 @@ import { helper } from '@ember/component/helper';
 
 export function schoolOwnership(type) {
 
-    var toString;
-
-    switch (type) {
+    switch (parseInt(type)) {
         case 1:
-            toString = "Public";
+            return "Public";
             break;
         case 2:
-            toString = "Private non-profit";
+            return "Private non-profit";
             break;
         case 3:
-            toString = "Private for-profit";
+            return "Private for-profit";
             break;
         default:
-            toString = "Not classified";
-            break;
+            return "Not classified";
     }
-
-    return toString;
 
 }
 

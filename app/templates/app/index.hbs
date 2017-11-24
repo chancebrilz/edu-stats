@@ -1,0 +1,17 @@
+<div class="container full-size">
+    <div class="content my-4">
+
+        {{#search-schools filter=(action 'filterByName') as |schools|}}
+          <table class="table table-striped results">
+              <tbody>
+                {{#each schools as |school|}}
+                  <tr>
+                      <td>{{#link-to 'app.school' school}}{{school.attrs.school.name}}{{/link-to}}</td>
+                  </tr>
+                {{/each}}
+             </tbody>
+        </table>
+        {{/search-schools}}
+
+    </div>
+</div>

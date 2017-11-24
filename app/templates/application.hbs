@@ -1,4 +1,4 @@
-<div class="navbar navbar-dark bg-primary">
+<div class="navbar navbar-dark bg-primary fixed-top">
     <div class="container d-flex justify-content-between">
         {{#link-to 'index' class="navbar-brand"}}
             <img id="logo-img" src="/assets/images/logo.png" alt="UniStats">
@@ -14,11 +14,19 @@
     </div>
 </div>
 
-{{outlet}}
+<div id="container">
+    {{outlet}}
+</div>
 
-<footer class="text-muted">
-  <div class="container">
-    <p>Copyright © {{moment-format (now) 'YYYY'}}  Chance Brilz</p>
-    <p>Contribute to this project on <a href="//github.com/chancebrilz/uni-stats">GitHub</a>.</p>
+<footer class="text-muted bg-light py-3">
+  <div class="container clearfix">
+      <div class="float-left mt-1">
+          Copyright © {{moment-format (now) 'YYYY'}}  Chance Brilz
+      </div>
+      <div class="float-right">
+          <a href="//github.com/chancebrilz/uni-stats" target="_blank" class="icon-link" title="Contribute to this project on Github.">
+              <img src="/assets/images/github-mark.png" alt="Github">
+          </a>
+      </div>
   </div>
 </footer>

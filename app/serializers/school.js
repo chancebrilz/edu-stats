@@ -10,12 +10,22 @@ export default DS.JSONSerializer.extend({
         }
 
         for(var i = 0; i < payload.results.length; i++) {
-            newPayload.data.push({
-                id: payload.results[i].id,
-                type: 'school',
-                attrs: this._deepen(payload.results[i])
-            });
-            delete(newPayload.data[i].attrs.id);
+            if(payload.results.length == 1) {
+                newPayload.data = {
+                    id: payload.results[i].id,
+                    type: 'school',
+                    attrs: this._deepen(payload.results[i])
+                }
+                delete(newPayload.data.attrs.id);
+            } else {
+                newPayload.data.push({
+                    id: payload.results[i].id,
+                    type: 'school',
+                    attrs: this._deepen(payload.results[i])
+                });
+                delete(newPayload.data[i].attrs.id);
+            }
+
         }
 
         store.pushPayload(newPayload);
