@@ -1,10 +1,11 @@
 {
   "name": "uni-stats",
-  "version": "0.0.0",
+  "productName": "UniStats",
+  "version": "0.1.0",
   "private": true,
   "description": "Small description for uni-stats goes here",
   "license": "MIT",
-  "author": "",
+  "author": "Chance Brilz",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -28,7 +29,6 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-moment-shim": "^3.5.0",
-    "ember-cli-pace": "^0.1.0",
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-sass": "^7.0.0",
     "ember-cli-shims": "^1.1.0",
