@@ -4,7 +4,8 @@ module.exports = {
       "squirrel"
     ],
     "darwin": [
-      "zip"
+      "zip",
+      "dmg"
     ],
     "linux": [
       "deb",

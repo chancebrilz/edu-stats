@@ -37,7 +37,6 @@ export default Controller.extend({
                   'fields': this.get('fields')
               });
             }
-            yield timeout(1000);
     }).restartable().on('init'),
 
     actions: {
