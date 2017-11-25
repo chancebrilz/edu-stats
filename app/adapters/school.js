@@ -10,7 +10,7 @@ export default DS.RESTAdapter.extend({
         'school': ['name', 'zip', 'degrees_awarded.predominant', 'ownership'],
         '_admissions': ['admission_rate.overall', 'sat_scores.average.overall', 'act_scores.midpoint.cumulative'],
         '_cost': ['attendance.academic_year', 'attendance.program_year', 'avg_net_price.public', 'avg_net_price.private'],
-        '_student': ['retention_rate.four_year.full_time', 'students_with_pell_grant'],
+        '_student': ['size', 'retention_rate.four_year.full_time', 'students_with_pell_grant'],
         '_aid': ['federal_loan_rate']
     },
 
@@ -50,7 +50,7 @@ export default DS.RESTAdapter.extend({
             for(var v = 0; v < values.length; v++) {
                 if(key.charAt(0) === "_") {
                     let field = key.substring(1) + '.' + values[v];
-                    for(var y = _years[0]; y < _years[1]; y++) {
+                    for(var y = _years[0]; y <= _years[1]; y++) {
                         this.set('fields', this.get('fields') + "," + y + '.' + field);
                     }
                 } else {
