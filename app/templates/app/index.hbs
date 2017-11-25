@@ -3,21 +3,24 @@
 
         {{#search-schools filter=(action 'filterByName') as |schools|}}
 
-        {{#if updateSchoolList.isRunning}}
+            {{#if updateSchoolList.isRunning}}
+                <span class="mx-1">Loading Schools...</span>
+            {{else}}
+                {{#if schools}}
+                    <table class="table table-striped results">
+                        <tbody>
+                            {{#each schools as |school|}}
+                                <tr>
+                                    <td>{{#link-to 'app.school' school}}{{school.attrs.school.name}}{{/link-to}}</td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                {{else}}
+                    <span class="mx-1">Sorry, no schools could be found using that name.</span>
+                {{/if}}
+            {{/if}}
 
-            <span>Loading Schools..</span>
-
-        {{else}}
-              <table class="table table-striped results">
-                  <tbody>
-                    {{#each schools as |school|}}
-                      <tr>
-                          <td>{{#link-to 'app.school' school}}{{school.attrs.school.name}}{{/link-to}}</td>
-                      </tr>
-                    {{/each}}
-                 </tbody>
-            </table>
-        {{/if}}
         {{/search-schools}}
 
     </div>
