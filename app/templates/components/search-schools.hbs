@@ -1,9 +1,11 @@
 
 <div id="search-box" class="mb-3">
     {{input value=value
+            id="search-input"
             class="form-control form-control-lg"
             key-up=(action 'handleSearch')
-            placeholder="Search school by name..."}}
+            placeholder="Search schools by name..."}}
+    <i id="search-close" {{action 'clearSearch'}} class="material-icons">close</i>
 </div>
 
 {{yield results}}

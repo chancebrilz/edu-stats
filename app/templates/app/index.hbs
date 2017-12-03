@@ -1,6 +1,12 @@
 <div class="container full-size">
     <div class="content my-4">
 
+        <h4 class="mb-2">School Search</h4>
+
+        <div class="mb-4 text-secondary small">
+            To start, search for a school and then choose one from the list.
+        </div>
+
         {{#search-schools filter=(action 'filterByName') as |schools|}}
 
             {{#if updateSchoolList.isRunning}}

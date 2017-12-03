@@ -1,4 +1,4 @@
-# uni-stats
+# UniStats
 [![Build Status](https://travis-ci.org/chancebrilz/uni-stats.svg?branch=master)](https://travis-ci.org/chancebrilz/uni-stats)
 
 ## Prerequisites

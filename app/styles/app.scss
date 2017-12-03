@@ -32,6 +32,22 @@ a:hover {
   min-height: 300px;
 }
 
+#search-box {
+    position: relative;
+    z-index: 2001;
+}
+
+#search-close {
+    position: absolute;
+    opacity: .4;
+    cursor: pointer;
+}
+
+#search-close:hover {
+    opacity: 1;
+    z-index: 2002;
+}
+
 @include media-breakpoint-down(sm) {
     html {
       font-size: 12px;
@@ -42,6 +58,11 @@ a:hover {
     #logo-img {
         width: 120px;
     }
+    #search-close {
+        top: 10px;
+        right: 10px;
+        font-size: 18px;
+    }
 }
 
 @include media-breakpoint-up(md) {
@@ -51,6 +72,10 @@ a:hover {
   #container {
       padding-top: 60px;
   }
+  #search-close {
+      top: 10px;
+      right: 10px;
+  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -59,5 +84,9 @@ a:hover {
   }
   #container {
       padding-top: 64px;
+  }
+  #search-close {
+      top: 13px;
+      right: 13px;
   }
 }

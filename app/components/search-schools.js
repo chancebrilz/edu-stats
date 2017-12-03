@@ -7,10 +7,13 @@ export default Component.extend({
     },
 
       actions: {
-        handleSearch: function() {
+        handleSearch() {
             let filterInputValue = this.get('value');
             let filterAction = this.get('filter');
             filterAction(filterInputValue).then((filterResults) => this.set('results', filterResults));
+        },
+        clearSearch() {
+            this.$("#search-input").val(null).keyup();
         }
       }
 
