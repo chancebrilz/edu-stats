@@ -14,7 +14,7 @@ export default Component.extend({
         },
         legend: {
             position: 'none'
-        },
+        }
     },
 
     studentPopData: Ember.computed(function(data) {
