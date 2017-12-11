@@ -1,5 +1,11 @@
 module.exports = {
   env: {
-    embertest: true
+    embertest: true,
+  },
+  "globals": {
+    "Ember": true
+  },
+  rules: {
+    "no-unused-vars": "off"
   }
 };

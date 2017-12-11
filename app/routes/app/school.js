@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
@@ -10,8 +11,8 @@ export default Route.extend({
         });
     },
 
-    afterModel(model) {
-        $.getJSON(this.get('geocodeUrl'), {
+    afterModel: function(model) {
+        Ember.$.getJSON(this.get('geocodeUrl'), {
             address: model.get('attrs.school.zip')
         }).then((data) => {
             var location = data.results[0].formatted_address.split(',');

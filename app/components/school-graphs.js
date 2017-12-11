@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import Component from '@ember/component';
 
 export default Component.extend({
@@ -17,14 +18,8 @@ export default Component.extend({
         }
     },
 
-    studentPopData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', '# of Students']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.student.size') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    studentPopData: Ember.computed(function() {
+        return this.buildData(['Year', '# of Students'], 'student.size');
     }),
 
     attendanceCostOptions: {
@@ -42,14 +37,8 @@ export default Component.extend({
         },
     },
 
-    attendanceCostData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', 'Attendance Cost']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.cost.attendance.academic_year') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    attendanceCostData: Ember.computed(function() {
+        return this.buildData(['Year', 'Attendance Cost'], 'cost.attendance.academic_year');
     }),
 
     acceptanceRateOptions: {
@@ -67,14 +56,8 @@ export default Component.extend({
         }
     },
 
-    acceptanceRateData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', 'Acceptance Rate']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.admissions.admission_rate.overall') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    acceptanceRateData: Ember.computed(function() {
+        return this.buildData(['Year', 'Acceptance Rate'], 'admissions.admission_rate.overall');
     }),
 
     avgSATScoreOptions: {
@@ -92,14 +75,8 @@ export default Component.extend({
         }
     },
 
-    avgSATScoreData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', 'SAT Score']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.admissions.sat_scores.average.overall') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    avgSATScoreData: Ember.computed(function() {
+        return this.buildData(['Year', 'SAT Score'], 'admissions.sat_scores.average.overall');
     }),
 
     avgACTScoreOptions: {
@@ -117,14 +94,8 @@ export default Component.extend({
         }
     },
 
-    avgACTScoreData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', 'ACT Score']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.admissions.act_scores.midpoint.cumulative') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    avgACTScoreData: Ember.computed(function() {
+        return this.buildData(['Year', 'ACT Score'], 'admissions.act_scores.midpoint.cumulative');
     }),
 
     pellGrantsOptions: {
@@ -142,14 +113,8 @@ export default Component.extend({
         }
     },
 
-    pellGrantsData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', '% of Students']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.student.students_with_pell_grant') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    pellGrantsData: Ember.computed(function() {
+        return this.buildData(['Year', '% of Students'], 'student.students_with_pell_grant');
     }),
 
     fedLoanOptions: {
@@ -167,14 +132,8 @@ export default Component.extend({
         }
     },
 
-    fedLoanData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', '% of Students']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.aid.federal_loan_rate') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    fedLoanData: Ember.computed(function() {
+        return this.buildData(['Year', '% of Students'], 'aid.federal_loan_rate');
     }),
 
     retentionRateOptions: {
@@ -192,15 +151,18 @@ export default Component.extend({
         }
     },
 
-    retentionRateData: Ember.computed(function(data) {
-        var school = this.get('school');
-        var data = [['Year', '% of Students']];
-        for(var year = 2000; year <= 2015; year++) {
-            var value = school.get('attrs.'+year+'.student.retention_rate.four_year.full_time') || 0;
-            data.push([year.toString(), value]);
-        }
-        return data;
+    retentionRateData: Ember.computed(function() {
+        return this.buildData(['Year', '% of Students'], 'student.retention_rate.four_year.full_time');
     }),
 
+
+    buildData: function(headers, field) {
+        let _data = [headers];
+        let school = this.get('school');
+        for(var year = 2000; year <= 2015; year++) {
+            _data.push([year.toString(), school.get('attrs.'+year+'.'+field) || 0 ]);
+        }
+        return _data;
+    }
 
 });
